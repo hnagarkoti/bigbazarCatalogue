@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+
+  <title>Big Bazar Products</title>
+  <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+  <!-- <script>
+  _u = _.noConflict(); // lets call ourselves _u
+  </script> -->
+  <style>
+  .pop_layout {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(70, 63, 63, 0.5);
+      transition: 0.6s;
+      z-index: 100;
+      height: 100%;
+  }
+  .pop_view {
+      box-sizing: border-box;
+      width: 760px;
+      height: 550px;
+      position: fixed;
+      left: 26%;
+      top: 20%;
+      pointer-events: none;
+      border-radius: 6px;
+      background-color: #ffffff;
+      color: #9c0000;
+      z-index: 102;
+      transition: 0.4s;padding-top: 25px;
+  }
+  .pop_view img{    width: 100%;
+    height: 280px;
+    border-bottom: 3px solid #efefef;
+    border-radius: 5px 5px 0; }
+  .pop_view h1{
+      font-size: 28px;
+    color: #9c0000;
+    padding-bottom: 20px;
+    float: left;
+    width: 100%;
+    }
+    .pop_view p {
+    line-height: 23px;
+    padding: 50px 45px;
+    font-family: 'Ropa Sans', sans-serif;
+    font-weight: 400;
+}
+  a {
+    color: #216ed9;
+    text-decoration: none;
+}
+a h1 {
+    padding: 2rem;
+    color: #216ed9;
+    text-align: center;
+}
+a:hover {
+    text-decoration: underline;
+}
+/*
+a[class^="simple-pagination-navigation-"] + a[class^="simple-pagination-navigation-"] {
+    margin-right: 0;
+}*/
+ a[class*="simple-pagination-navigation-disabled"] {
+    color: black;
+    cursor: default;
+}
+/*
+Styles used to page things look nice :)
+*/
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+body {
+    font: 1rem/1rem Helvetica, sans-serif;
+    background-color: #164B1f;
+}
+#header {
+    border-radius: .5rem;
+}
+.my-navigation div {
+    /*float: left;*/
+    display: inline-block;
+}
+.my-navigation {
+    text-align: center;
+}
+.nav-wrap {
+    padding-top: 0.5em;
+    margin: 0px auto;
+}
+
+.simple-pagination-page-numbers a {
+    width: 2rem;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.simple-pagination-page-numbers {
+}
+.simple-pagination-previous, .simple-pagination-next {
+    padding-bottom: 0.5em;
+}
+#container {
+    text-align: center;
+}
+.products-list {
+    list-style: none;
+    margin: 0px auto;
+}
+.products-list img {
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.25);
+}
+/*
+.simple-pagination-navigation-previous {
+    float: left;
+}
+.simple-pagination-navigation-next {
+    float: right;
+}*/
+  </style>
+
+</head>
+
+<body>
+<div class="background">
+    <div class="header_main">
+        <div class="container">
+          <div class="row" id="header">
+            <div class="col-md-3 col-sm-4 col-xs-12" >
+                <a href="http://www.bigbazaar.com/"target="_blank">
+                    <img id="logop" src="assets/images/bigbazaar_logo.jpg">
+                </a>
+            </div>
+            <div class="col-md-7 col-sm-6 col-xs-12" id="searchText">
+              <div class="search_pt">
+                <input type="text" id="search" placeholder="Search Product" name="name" required style="color:#f16522;">
+                <input type="submit" value="search" id="submit" name="name">
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-12">
+                <div class="top-header-right-social">
+                    <ul class="rt">
+                        <li>
+                          <a class="face" href="https://www.facebook.com/BigBazaar" target="_blank">
+                              <img src="assets/images/Facebook.png"width="100%">
+                          </a>
+                        </li>
+                        <li>
+                          <a class="twit" href="https://twitter.com/BigBazaar" target="_blank">
+                              <img src="assets/images/Twitter.png"width="100%">
+                          </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+        </div><!--container-fluid-->
+    </div><!--header_main-->
+
+    <div class="banner_main">
+        <img src="assets/images/Banner-011.jpg">
+    </div><!--banner_main-->
+
+    <div class="main-content">
+        <div class="container">
+        <div class="txt_heading">
+            <div class="row"id="sp1">&nbsp;</div>
+            <div class="row" id="sp2">&nbsp;</div>
+            <div class="row" id="sp3">&nbsp;</div>
+            <div class="row"id="sp4">&nbsp;</div>
+
+            <h1 id="txt_title">OUR PRODUCTS</h1>
+            <center><hr id="pui"></center>
+            <div class="row" id="sp5">&nbsp;</div>
+            <div class="row" id="sp6">&nbsp;</div>
+            <div class="row"id="sp7">&nbsp;</div>
+            <div class="row"id="sp8">&nbsp;</div>
+        </div>
+        <div class="section_main">
+           <!-- <div class="row">
+                <div class="col-md-12"width="100%"height="500px"style="color:#122A4E;"></div>
+            </div>-->
+            <div class="all-products page" id="container">
+
+                  <div class="filters">
+                      <form>
+                        <div class="filter-criteria">
+                          <span>Category</span>
+                          <label><input type="checkbox" name="categories" value="chocolate">Chocolate</label>
+                          <label><input type="checkbox" name="categories" value="electronics">Electronics</label>
+                            <label><input type="checkbox" name="categories" value="bedsheet">Bedsheets and Cushions</label>
+                            <label><input type="checkbox" name="categories" value="quilt">Quilts</label>
+                            <label><input type="checkbox" name="categories" value="utensil">Cutlery & Kitchen Utensils</label>
+                            <label><input type="checkbox" name="categories" value="bags">Bags & Briefcases</label>
+                            <label><input type="checkbox" name="categories" value="towel">Towels</label>
+                            <label><input type="checkbox" name="categories" value="misc">Miscellaneous</label>
+                        </div>
+                        <div id="filterByPrice" class="filter-criteria">
+                            <span>Cost</span>
+                            <label><input type="checkbox" value="50-149" name="price">50-149</label>
+                            <label><input type="checkbox" value="150-499" name="price">150-499</label>
+                            <label><input type="checkbox" value="500-999" name="price">500-999</label>
+                            <label><input type="checkbox" value="1000-1999" name="price">1000-1999</label>
+                            <label><input type="checkbox" value="2000-2999" name="price">2000-2999</label>
+                            <label><input type="checkbox" value="3000-0" name="price">3000 & Above</label>
+                        </div>
+                        <button>Clear filters</button>
+                      </form>
+
+                  </div>
+
+
+                  <ul class="products-list" id="renderProducts">
+                    <!-- Products Area  -->
+                        <!-- <script id="products-template" type="x-handlebars-template">​
+                        {{#each this}}
+                        <li data-index="{{id}}">
+                            <a href="#" class="product-photo"><img src="{{image.small}}" height="180" alt="{{name}}"/></a>
+                            <div id ="prodp">
+                                <h2 ><a href="#"> {{name}} </a></h2>
+                                <p class="product-price">Rs. {{price}}</p>
+                                <div class="highlight"></div></div>
+                        </li>
+                        {{/each}}
+                        </script>  -->
+                        <!-- Products Area  -->
+
+                  </ul>
+
+
+
+            <div class="single-product page" id="singleProductView">
+                <!-- <div class="overlay"></div>
+                <div class="preview-large">
+                    <h3>Single product view</h3>
+                    <img src="assets/images/1b.jpg "/>
+                    <p></p>
+                    <span class="close">×</span>
+                </div> -->
+            </div>
+            <div class="error page">
+                <h3>Sorry, something went wrong.. :(</h3>
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+
+    <div id ="pagi">
+        <button style="display: none" id="previousPageButton" onclick="loadPrevious()">Previous</button>
+          <span id="renderPagination">
+
+          </span>
+         <button onclick="loadNextProducts()">Next</button>
+    </div>
+
+    <!-- <div id="light-pagination" class="pagination"></div> -->
+
+    <p class="totop">
+        <a href="#top"><img src="assets/images/Arrow.png" title="Up Squared" width="48"></a>
+    </p>
+    <div class="footer">
+
+        <p id="hrd"></p>
+      <p id="cpy" ><strong>©</strong> Copyright Future Group,2016 All Rights Reserved </p>
+    </div>
+</div><!--background-->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+<!-- <script src="assets/js/script.js"></script> -->
+
+<script>
+var totalProductsLen = 0;
+var limit = 4;
+var page = 1;
+var offset = (page - 1)*limit;
+var productHtml = '';
+var TotalPageNumbers;
+$(document).ready(function () {
+    $.getJSON( "http://localhost:3000/products", function( data ) {
+      totalProductsLen = data.length;
+    });
+var url = 'http://localhost:3000/products?_start='+offset+'&_limit='+ limit;
+    $.getJSON( url, function( data ) {
+      var len = data.length;
+      for(var i =0; i< len; i++){
+        productHtml = productHtml + "<li data-index=\"'+data[i].id+'\"><a href=\"javascript: void(0)\" class=\"product-photo\" onclick=\"viewItem("+data[i].id+")\"><img src="+data[i].image.small+" height=\"180\" alt=\"small\"/></a><div id =\"prodp\"><h2 ><a href=\"javascript: void(0)\"> "+ data[i].name +" onclick=\"viewItem("+data[i].id+")\" </a></h2><p class=\"product-price\">Rs. "+data[i].price+" </p><div class=\"highlight\"></div></div></li>";
+      }
+      document.getElementById("renderProducts").innerHTML = productHtml;
+});
+// $("#singleProductView").hide();
+// $(".product-photo").click(function(){
+//    $("#singleProductView").show();
+// });
+});
+
+function loadNextProducts(){
+  var lenCheck = totalProductsLen - limit;
+    if(page == Math.floor(totalProductsLen/limit) || page > Math.floor(totalProductsLen/limit)){
+      page = page;
+      offset = (page - 1)*limit;
+    }else{
+      page = page + 1;
+      offset = (page - 1)*limit;
+    }
+    var url = 'http://localhost:3000/products?_start=' + offset + '&_limit=' + limit;
+    var names=[];
+$('input[type="checkbox"]:checked').each(function (i, el){
+      names.push(el.value);
+    });
+var NextnewStr = '';
+var NextcategoryString= '';
+  if(names.length > 1){
+    var len = names.length;
+    for(var i=0; i < len; i++){
+      if( names[i].search('-') == -1 ){
+        NextcategoryString = NextcategoryString + '&specs.categories_like=' + names[0];
+      }else{
+        lt = names[i].split('-')[0];
+        gt = names[i].split('-')[1];
+        NextnewStr = NextnewStr + '&price_gte=' + lt + '&price_lte=' + gt;
+      }
+    }
+  }else{
+      if(names[0]){
+        if( names[0].search('-') == -1 ){
+          NextcategoryString = '&specs.categories_like=' + names[0];
+        }else {
+          lt = names[0].split('-')[0];
+          gt = names[0].split('-')[1];
+          NextnewStr = '&price_gte=' + lt + '&price_lte=' + gt;
+        }
+      }else{
+      }
+  }
+
+  if(NextcategoryString && NextnewStr){
+    url = url + NextnewStr + NextcategoryString;
+  }else if (NextnewStr) {
+    url = url + NextnewStr;
+  }else if(NextcategoryString){
+    url = url + NextcategoryString;
+  }
+
+      $.ajax({url: url, success: function(data){
+        productHtml = '';
+        var newDataLen = data.length;
+        var newlenCheck = newDataLen - limit;
+          if(page == Math.floor(newlenCheck/limit) || page > Math.floor(newlenCheck/limit)){
+            page = page;
+            offset = (page - 1)*limit;
+          }else{
+            page = page + 1;
+            offset = (page - 1)*limit;
+          }
+          if(data.length == 0){
+            alert('No More products found');
+            window.location.assign(window.location.href);
+          }else{
+            for(var i =0; i< data.length; i++){
+              productHtml = productHtml + "<li data-index=\"'+data[i].id+'\"><a href=\"javascript: void(0)\" class=\"product-photo\" onclick=\"viewItem()\"><img src="+data[i].image.small+" height=\"180\" alt=\"small\" /></a><div id =\"prodp\"><h2 ><a href=\"javascript: void(0)\"> "+ data[i].name +" onclick=\"filteByName()\"</a></h2><p class=\"product-price\">Rs. "+data[i].price+" </p><div class=\"highlight\"></div></div></li>";
+            }
+            document.getElementById("renderProducts").innerHTML = productHtml;
+            document.getElementById("previousPageButton").style= 'display: true';
+          }
+    }});
+}
+
+function closeViewItem(id){
+  console.log('coming here');
+  // alert('Id received:-- ', id)
+}
+function viewItem(id){
+  var url = 'http://localhost:3000/products?id=' + id;
+  $.getJSON( url, function( data ) {
+    console.log('data:-- ', data);
+    var singleProductViewHtml = '';
+      singleProductViewHtml = "<div class=\"pop_layout\"></div><div class=\"pop_view\"><h1>Single product view</h1><img src=\" "+data[0].image.large+" \"/><p>"+data[0].description+"</p><span class=\"close\" onclick=\"alert('clicked'); \">×</span></div>";
+    document.getElementById("singleProductView").innerHTML = singleProductViewHtml;
+  });
+  return false;
+}
+
+
+
+// function viewItemLarge(){
+//   alert('CLicked')
+// }
+
+function filteByName(){
+  console.log('filteByName item:--');
+  return false;
+}
+
+function loadPrevious(){
+  productHtml = '';
+  if(page == 1){
+    page = 1;
+  }
+  else {
+    page = page - 1;
+    offset = (page - 1)*limit;
+  }
+
+  // var url = 'http://localhost:3000/products?_start=' + offset + '&_limit=' + limit;
+var url = '';
+var names = [];
+  $('#filterByPrice input[type="checkbox"]:checked').each(function (i, el){
+        names.push(el.value);
+      });
+      if(offset == 0){
+        document.getElementById("previousPageButton").style = 'display: none';
+      }
+      if(names.length != 0){
+        var namesArrayLen = names.length;
+        var newStr = '';
+        for(var i=0; i< namesArrayLen; i++){
+          var str = names[i];
+          var gt = str.split('-')[0];
+          var lt = str.split('-')[1];
+          newStr = newStr + '&price_gte=' + gt + '&price_lte=' + lt;
+        }
+        url = 'http://localhost:3000/products?_start=' + offset + '&_limit=' + limit + newStr;
+      }
+      else{
+        url = 'http://localhost:3000/products?_start=' + offset + '&_limit=' + limit;
+      }
+
+  $.getJSON( url, function( data ) {
+    var len = data.length;
+    productHtml = '';
+    for(var i =0; i< len; i++){
+      productHtml = productHtml + "<li data-index=\"'+data[i].id+'\"><a href=\"#\" class=\"product-photo\"><img src="+data[i].image.small+" height=\"180\" alt=\"small\"/></a><div id =\"prodp\"><h2 ><a href=\"#\"> "+ data[i].name +" </a></h2><p class=\"product-price\">Rs. "+data[i].price+" </p><div class=\"highlight\"></div></div></li>";
+    }
+    document.getElementById("renderProducts").innerHTML = productHtml;
+  });
+}
+
+// For Filtering data
+_u = _.noConflict();
+var checked, checkedValues = new Array();
+$(document).on("change", "input[type=checkbox]", function(e) {
+
+  checked = $("input[type=checkbox]:checked");
+  checkedValues = checked.map(function(i) {
+    console.log('oncheck:-- ', $(this).val()); return $(this).val() }).get();
+  var url = 'http://localhost:3000/products';
+  offset = 0;
+  if (checked.length) {
+      var str = checkedValues.join();
+      var testArr =[];
+      testArr = str.split(',');
+      var gt, lt;
+      var testArrLen = testArr.length;
+      if(testArrLen > 1){
+        var newStr = '';
+        var categoryString = '';
+        for(var i=0; i< testArrLen; i++){
+          url = 'http://localhost:3000/products?_start='+offset+'&_limit='+limit;
+
+          if(testArr[i].search('-') == -1){
+            categoryString = categoryString + '&specs.categories_like=' + testArr[i];
+          }else{
+            lt = testArr[i].split('-')[0];
+            gt = testArr[i].split('-')[1];
+            newStr = newStr + '&price_gte=' + lt + '&price_lte=' + gt;
+          }
+
+          if(categoryString && newStr){
+            url = url + newStr + categoryString;
+          }else if(newStr){
+            url = url + newStr;
+          }else if(categoryString){
+            url = url + categoryString;
+          }
+        }
+      }else{
+        if(testArr[0].search('-') == -1){
+          categoryString = '&specs.categories_like=' + testArr[0];
+        }else{
+          lt = testArr[0].split('-')[0];
+          gt = testArr[0].split('-')[1];
+          newStr = '&price_gte=' + lt + '&price_lte=' + gt;
+        }
+        url = 'http://localhost:3000/products?_start='+offset+'&_limit='+limit;
+
+        if(categoryString && newStr){
+          url = url + newStr + categoryString;
+        }else if(newStr){
+          url = url + newStr;
+        }else if(categoryString){
+          url = url + categoryString;
+        }
+      }
+
+      $.ajax({url: url, success: function(data){
+        if(data.length == 0){
+          alert('No products found');
+          window.location.assign(window.location.href);
+        }else {
+          productHtml = '';
+          for(var i =0; i< data.length; i++){
+            productHtml = productHtml + "<li data-index=\"'+data[i].id+'\"><a href=\"javascript: void(0)\" class=\"product-photo\" onclick=\"viewItem("+data[i].id+")\"><img src="+data[i].image.small+" height=\"180\" alt=\"small\"/></a><div id =\"prodp\"><h2 ><a href=\"javascript: void(0)\"> "+ data[i].name +" onclick=\"viewItem("+data[i].id+")\" </a></h2><p class=\"product-price\">Rs. "+data[i].price+" </p><div class=\"highlight\"></div></div></li>";
+          }
+          document.getElementById("renderProducts").innerHTML = productHtml;
+        }
+
+    }});
+  }
+  else {
+      offset = 0;
+      var url = 'http://localhost:3000/products?_start='+offset+'&_limit='+ limit;
+          $.getJSON( url, function( data ) {
+            var len = data.length;
+            productHtml = '';
+            for(var i =0; i< len; i++){
+              productHtml = productHtml + "<li data-index=\"'+data[i].id+'\"><a href=\"javascript: void(0)\" class=\"product-photo\" onclick=\"viewItem("+data[i].id+")\"><img src="+data[i].image.small+" height=\"180\" alt=\"small\"/></a><div id =\"prodp\"><h2 ><a href=\"javascript: void(0)\"> "+ data[i].name +" onclick=\"viewItem("+data[i].id+")\" </a></h2><p class=\"product-price\">Rs. "+data[i].price+" </p><div class=\"highlight\"></div></div></li>";
+            }
+            document.getElementById("renderProducts").innerHTML = productHtml;
+      });
+      $(".aaa").append($("<p />", { text: "No Values" }));
+  }
+});
+
+</script>
+
+
+</body>
+</html>
