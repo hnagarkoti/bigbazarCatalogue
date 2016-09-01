@@ -382,15 +382,18 @@ var NextcategoryString= '';
 }
 
 function closeViewItem(id){
-  console.log('coming here');
-  // alert('Id received:-- ', id)
+  console.log('coming here', id);
+  alert('Id received:-- ' + id);
+
+  
+
 }
 function viewItem(id){
   var url = 'http://localhost:3000/products?id=' + id;
   $.getJSON( url, function( data ) {
     console.log('data:-- ', data);
     var singleProductViewHtml = '';
-      singleProductViewHtml = "<div class=\"pop_layout\"></div><div class=\"pop_view\"><h1>Single product view</h1><img src=\" "+data[0].image.large+" \"/><p>"+data[0].description+"</p><span class=\"close\" onclick=\"alert('clicked'); \">×</span></div>";
+      singleProductViewHtml = "<div class=\"pop_layout\"></div><div class=\"pop_view\"><h1>Single product view</h1><img src=\" "+data[0].image.large+" \"/><p>"+data[0].description+"</p><span class=\"close\" onclick=\"closeViewItem("+data[0].id+") \">×</span></div>";
     document.getElementById("singleProductView").innerHTML = singleProductViewHtml;
   });
   return false;
