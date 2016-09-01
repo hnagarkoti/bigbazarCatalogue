@@ -373,7 +373,7 @@ var NextcategoryString= '';
             window.location.assign(window.location.href);
           }else{
             for(var i =0; i< data.length; i++){
-              productHtml = productHtml + "<li data-index=\"'+data[i].id+'\"><a href=\"javascript: void(0)\" class=\"product-photo\" onclick=\"viewItem()\"><img src="+data[i].image.small+" height=\"180\" alt=\"small\" /></a><div id =\"prodp\"><h2 ><a href=\"javascript: void(0)\"> "+ data[i].name +" onclick=\"filteByName()\"</a></h2><p class=\"product-price\">Rs. "+data[i].price+" </p><div class=\"highlight\"></div></div></li>";
+              productHtml = productHtml + "<li data-index=\"'+data[i].id+'\"><a href=\"javascript: void(0)\" class=\"product-photo\" onclick=\"viewItem("+data[i].id+")\"><img src="+data[i].image.small+" height=\"180\" alt=\"small\" /></a><div id =\"prodp\"><h2 ><a href=\"javascript: void(0)\"> "+ data[i].name +" onclick=\"filteByName()\"</a></h2><p class=\"product-price\">Rs. "+data[i].price+" </p><div class=\"highlight\"></div></div></li>";
             }
             document.getElementById("renderProducts").innerHTML = productHtml;
             document.getElementById("previousPageButton").style= 'display: true';
@@ -383,9 +383,10 @@ var NextcategoryString= '';
 
 function closeViewItem(id){
   console.log('coming here', id);
-  alert('Id received:-- ' + id);
+  // alert('Id received:-- ' + id);
+  var singleProductViewHtml = '';
+  document.getElementById("singleProductView").innerHTML = singleProductViewHtml;
 
-  
 
 }
 function viewItem(id){
@@ -448,7 +449,7 @@ var names = [];
     var len = data.length;
     productHtml = '';
     for(var i =0; i< len; i++){
-      productHtml = productHtml + "<li data-index=\"'+data[i].id+'\"><a href=\"#\" class=\"product-photo\"><img src="+data[i].image.small+" height=\"180\" alt=\"small\"/></a><div id =\"prodp\"><h2 ><a href=\"#\"> "+ data[i].name +" </a></h2><p class=\"product-price\">Rs. "+data[i].price+" </p><div class=\"highlight\"></div></div></li>";
+      productHtml = productHtml + "<li data-index=\"'+data[i].id+'\"><a href=\"#\" class=\"product-photo\"><img src="+data[i].image.small+" height=\"180\" alt=\"small\" onclick=\"viewItem("+data[i].id+")\"/></a><div id =\"prodp\"><h2 ><a href=\"#\"> "+ data[i].name +" </a></h2><p class=\"product-price\">Rs. "+data[i].price+" </p><div class=\"highlight\"></div></div></li>";
     }
     document.getElementById("renderProducts").innerHTML = productHtml;
   });
